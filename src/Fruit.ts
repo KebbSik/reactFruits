@@ -1,0 +1,1 @@
+export type Fruit = "banana" | "watermelon" | "apple" | "strawberry" | "peach";
