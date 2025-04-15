@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Fruit } from "./Fruit";
+import { Fruit } from "./FruitsMap";
 
 function App() {
   const [fruit, setFruit] = useState<Fruit>("banana");
@@ -14,7 +14,7 @@ function App() {
   };
   return (
     <>
-      <Navbar theme={theme[fruit]} updateFruit={setFruit} />
+      <Navbar />
       hello {fruit}
     </>
   );
