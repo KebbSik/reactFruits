@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { themeMap, Fruit } from "../FruitsMap"; // or wherever you saved the file
+import { themeMap, Fruit } from "../constants/FruitsMap"; // or wherever you saved the file
 
 type ThemeContextType = {
   currentFruit: Fruit;

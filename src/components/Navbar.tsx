@@ -1,10 +1,10 @@
 import { div, feSpotLight } from "motion/react-client";
 import React, { useEffect, useState } from "react";
-import { Fruit } from "../FruitsMap";
+import { Fruit } from "../constants/FruitsMap";
 import { addScaleCorrector, easeInOut, motion } from "motion/react";
-import useMaxScreenSize from "../useMaxScreenSize";
-import { useTheme } from "./ThemeContext";
-import { fruitList } from "../FruitsMap";
+import useMaxScreenSize from "../hooks/useMaxScreenSize";
+import { useTheme } from "../contexts/ThemeContext";
+import { fruitList } from "../constants/FruitsMap";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {

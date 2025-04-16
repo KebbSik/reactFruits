@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Fruit } from "./FruitsMap";
+import { Fruit } from "./constants/FruitsMap";
 
 function App() {
   const [fruit, setFruit] = useState<Fruit>("banana");
