@@ -56,8 +56,6 @@ const Navbar = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            // gap: max768 ? "1rem" : "",
-            // alignItems: "center",
             justifyContent: "space-around",
             width: "100%",
             minHeight: "4rem",
@@ -83,7 +81,6 @@ const Navbar = () => {
                   }}
                   onClick={() => {
                     setIsActive(!isActive);
-                    console.log(isActive);
                   }}
                 ></GiHamburgerMenu>
               </motion.div>
@@ -109,11 +106,16 @@ const Navbar = () => {
               alignItems: "center",
               backdropFilter: "blur(4px)",
               borderRadius: "0 0 3% 3%",
-              // height: isActive ? "" : 0,
             }}
           >
             {fruitList.map((fruit) => (
               <motion.a
+                initial={{ height: 0, opacity: 0 }}
+                animate={
+                  isActive
+                    ? { height: "auto", opacity: 1, y: -5 }
+                    : { height: 0, opacity: 0, y: -10, pointerEvents: "none" }
+                }
                 whileHover={{ scale: 1.1, rotate: [-3, 3] }}
                 whileTap={{ scale: 0.8, transition: { duration: 0.1 } }}
                 transition={{ duration: 0.1, ease: easeInOut }}
