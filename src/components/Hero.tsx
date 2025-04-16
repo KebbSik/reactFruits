@@ -9,6 +9,8 @@ import { useTheme } from "../contexts/ThemeContext";
 import { AnimatePresence, motion } from "motion/react";
 import { MdOpacity } from "react-icons/md";
 import { GiDuration } from "react-icons/gi";
+import { easeInOut } from "motion";
+import OnScrollLine from "./OnScrollLine";
 
 const Hero = () => {
   const { theme, currentFruit } = useTheme();
@@ -31,11 +33,12 @@ const Hero = () => {
           key={theme.svgUrl}
           style={{ zIndex: -1 }}
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: [0, 1.1, 1] }}
           exit={{ opacity: 0, scale: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, ease: easeInOut }}
         />
       </AnimatePresence>
+      <OnScrollLine />
     </div>
   );
 };
