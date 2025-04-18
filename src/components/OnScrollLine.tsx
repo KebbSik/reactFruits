@@ -16,8 +16,6 @@ const OnScrollLine = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          //   d="M 0 -200 V -70 A 70 70 0 1 1 -7.5 -69.5 A -25 -69.5 100 0 1 0 -70 M 0 70 V 200  "
-          //   d="M 0 -200 V -70 A 70 70 0 1 1 -7.5 -69.5 A -25 -69.5 100 0 1 0 -70 M 0 70   " //V 200
           d="M 0 -200 V -70 A 70 70 0 1 1 -7.5 -69.6 A -25 -70 100 0 1 0 -70 A 70 70 0 1 1 0 70 V 200  " //V 200
           fill="none"
           strokeLinecap={"round"}
@@ -28,8 +26,6 @@ const OnScrollLine = () => {
           transition={{ duration: 3 }}
         />
         <motion.path
-          //   d="M 0 -200 V -70 A 70 70 0 1 1 -7.5 -69.5 A -25 -69.5 100 0 1 0 -70 M 0 70 V 200  "
-          //   d="M 0 -70 A 70 70 0 1 1 0 70   " //V 200
           fill="none"
           strokeLinecap={"round"}
           strokeWidth={10}
