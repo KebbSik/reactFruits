@@ -47,7 +47,7 @@ const Hero = ({ scrollRange }: Props) => {
   );
   const imageRotate = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.55, minRange + absoluteRange * 0],
+    [minRange + absoluteRange * 0.55, minRange + absoluteRange * 0.7],
     [0, -360]
   );
 
@@ -72,7 +72,7 @@ const Hero = ({ scrollRange }: Props) => {
           height: svgBoxHeight,
           zIndex: -1,
           rotate: boxRotate,
-          border: "1px solid black",
+          // border: "1px solid black",
         }}
       >
         <motion.svg
