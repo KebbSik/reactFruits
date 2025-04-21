@@ -15,25 +15,50 @@ const Hero = ({ scrollRange }: Props) => {
   const absoluteRange = scrollRange ? scrollRange[1] - scrollRange[0] : 0;
 
   const { scrollYProgress } = useScroll();
-  const pathLength = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const pathLength = useTransform(
+    scrollYProgress,
+    [minRange, minRange + absoluteRange * 0.2],
+    [0, 1]
+  );
   const svgBackground = useTransform(
     scrollYProgress,
-    [0.1, 0.15],
+    [minRange + absoluteRange * 0.2, minRange + absoluteRange * 0.3],
     ["#ffffff0", theme.color]
   );
-  const boxWidth = useTransform(scrollYProgress, [0.15, 0.2], ["50%", "100%"]);
-  const svgCircleScale = useTransform(scrollYProgress, [0.3, 0.35], [1, 0]);
+  const boxWidth = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.3, minRange + absoluteRange * 0.4],
+    ["50%", "100%"]
+  );
+  const svgCircleScale = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.55, minRange + absoluteRange * 0.6],
+    [1, 0]
+  );
   const svgImgScale = useTransform(
     scrollYProgress,
-    [0.25, 0.275, 0.3, 0.35],
+    [
+      minRange + absoluteRange * 0.45,
+      minRange + absoluteRange * 0.5,
+      minRange + absoluteRange * 0.55,
+      minRange + absoluteRange * 0.6,
+    ],
     [1, 1.5, 0.5, 0]
   );
-  const imageRotate = useTransform(scrollYProgress, [0.3, 0.35], [0, -360]);
+  const imageRotate = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.55, minRange + absoluteRange * 0],
+    [0, -360]
+  );
 
-  const boxRotate = useTransform(scrollYProgress, [0.35, 0.45], [0, 90]);
+  const boxRotate = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.7, minRange + absoluteRange * 0.85],
+    [0, 90]
+  );
   const svgBoxHeight = useTransform(
     scrollYProgress,
-    [0.45, 0.55],
+    [minRange + absoluteRange * 0.85, maxRange],
     ["100vh", "0vh"]
   );
 
@@ -47,6 +72,7 @@ const Hero = ({ scrollRange }: Props) => {
           height: svgBoxHeight,
           zIndex: -1,
           rotate: boxRotate,
+          border: "1px solid black",
         }}
       >
         <motion.svg
