@@ -3,9 +3,17 @@ import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
 import OnScrollLine from "./OnScrollLine";
 
-const Hero = () => {
+interface Props {
+  scrollRange?: [number, number];
+}
+
+const Hero = ({ scrollRange }: Props) => {
   const { theme, currentFruit } = useTheme();
-  // const { theme } = useTheme();
+
+  const minRange = scrollRange ? scrollRange[0] : 0;
+  const maxRange = scrollRange ? scrollRange[1] : 0;
+  const absoluteRange = scrollRange ? scrollRange[1] - scrollRange[0] : 0;
+
   const { scrollYProgress } = useScroll();
   const pathLength = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
   const svgBackground = useTransform(

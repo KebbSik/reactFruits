@@ -16,7 +16,7 @@ function App() {
       <Navbar />
 
       <ScrollSectionContainer height="600vh">
-        <Hero />
+        <Hero scrollRange={[0, 0.55]} />
       </ScrollSectionContainer>
 
       <ScrollSectionContainer height={"400vh"}>
