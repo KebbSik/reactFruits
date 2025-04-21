@@ -1,17 +1,34 @@
 import { easeInOut } from "motion";
-import { motion } from "motion/react";
-import React from "react";
+import { motion, motionValue, useScroll, useTransform } from "motion/react";
+import React, { useEffect } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 
-const FruitLine = () => {
+interface Props {
+  scrollRange?: [number, number];
+}
+
+const FruitLine = ({ scrollRange }: Props) => {
   const { theme } = useTheme();
+  const { scrollYProgress } = useScroll();
+  const pathLenght = useTransform(
+    scrollYProgress,
+    scrollRange ? [scrollRange[0], scrollRange[1]] : [0, 0],
+    [0, 1]
+  );
+
   return (
-    <div style={{ position: "absolute", height: "100vh", width: 300 }}>
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: "5%",
+        height: "100vh",
+        width: 300,
+      }}
+    >
       <svg height={"100%"} viewBox="0 0 380 1000" fill="none">
         <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 5, ease: easeInOut }}
+          pathLength={pathLenght}
           id="banana"
           d={theme.line}
           style={{

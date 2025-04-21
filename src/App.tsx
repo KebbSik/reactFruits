@@ -3,27 +3,22 @@ import Navbar from "./components/Navbar";
 import { Fruit } from "./constants/FruitsMap";
 import Hero from "./components/Hero";
 import FruitLine from "./components/FruitLine";
-import BananaSVG from "./components/FruitsSVGs/BananaSVG";
+
 import { motion, useScroll } from "motion/react";
+import ScrollSectionTest from "./components/Tests/ScrollSectionTest";
 
 function App() {
-  const [fruit] = useState<Fruit>("banana");
-  const { scrollYProgress, scrollY } = useScroll();
-  useEffect(() => {
-    const unsubY = scrollY.on("change", (latest) => {
-      console.log("scrollY:", latest);
-    });
-    const unsubYProgress = scrollYProgress.on("change", (latest) => {
-      console.log("scrollY:", latest);
-    });
-  }, [scrollY, scrollYProgress]);
+  const scrollcontroller = {}; //percetage controler of scroll
+
   return (
     <>
       <Navbar />
-
-      <Hero />
-
-      <FruitLine />
+      <div style={{ height: "600vh" }}>
+        <Hero />
+      </div>
+      <ScrollSectionTest>
+        <FruitLine scrollRange={[0.8, 1]} />
+      </ScrollSectionTest>
     </>
   );
 }
