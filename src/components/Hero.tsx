@@ -30,20 +30,7 @@ const Hero = () => {
   );
 
   return (
-    <motion.div
-      style={{
-        position: "sticky",
-        top: 0,
-        display: "flex",
-        width: "100%",
-        height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {/* <OnScrollLine /> */}
-
-      {/* return ( */}
+    <>
       <motion.div
         style={{
           backgroundColor: svgBackground,
@@ -52,7 +39,6 @@ const Hero = () => {
           height: svgBoxHeight,
           zIndex: -1,
           rotate: boxRotate,
-          // opacity: svgBoxOpacity,
         }}
       >
         <motion.svg
@@ -91,14 +77,20 @@ const Hero = () => {
           alt={currentFruit}
           width={400}
           key={theme.svgUrl}
-          style={{ zIndex: -1, scale: svgImgScale, rotate: imageRotate }}
+          style={{
+            zIndex: -1,
+            scale: svgImgScale,
+            rotate: imageRotate,
+            // top: "5vh",
+            // position: "absolute",
+          }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: [0, 1.1, 1] }}
           exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.3, ease: easeInOut }}
         />
       </AnimatePresence>
-    </motion.div>
+    </>
   );
 };
 

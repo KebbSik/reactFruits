@@ -5,7 +5,8 @@ import Hero from "./components/Hero";
 import FruitLine from "./components/FruitLine";
 
 import { motion, useScroll } from "motion/react";
-import ScrollSectionTest from "./components/Tests/ScrollSectionTest";
+import ScrollSectionContainer from "./components/Tests/ScrollSectionContainer";
+import OnScrollLine from "./components/OnScrollLine";
 
 function App() {
   const scrollcontroller = {}; //percetage controler of scroll
@@ -13,12 +14,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <div style={{ height: "600vh" }}>
+
+      <ScrollSectionContainer height="600vh">
         <Hero />
-      </div>
-      <ScrollSectionTest>
+      </ScrollSectionContainer>
+
+      <ScrollSectionContainer height={"400vh"}>
         <FruitLine scrollRange={[0.8, 1]} />
-      </ScrollSectionTest>
+      </ScrollSectionContainer>
     </>
   );
 }
