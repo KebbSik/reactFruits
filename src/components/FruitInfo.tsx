@@ -28,7 +28,7 @@ const FruitInfo = ({ scrollRange }: Props) => {
   );
   const info4 = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.75, 1],
+    [minRange + absoluteRange * 0.75, maxRange],
     [-100, 0]
   );
   const info1Opacity = useTransform(
@@ -48,7 +48,7 @@ const FruitInfo = ({ scrollRange }: Props) => {
   );
   const info4Opacity = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.75, 1],
+    [minRange + absoluteRange * 0.75, maxRange],
     [0, 1]
   );
   return (

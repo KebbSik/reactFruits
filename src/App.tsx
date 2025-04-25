@@ -8,6 +8,10 @@ import { motion, useScroll } from "motion/react";
 import ScrollSectionContainer from "./components/Tests/ScrollSectionContainer";
 import OnScrollLine from "./components/OnScrollLine";
 import FruitInfo from "./components/FruitInfo";
+import ArrowSVG from "./components/DescriptionSecion/Description";
+import Description from "./components/DescriptionSecion/Description";
+import World from "./components/World";
+import StartOver from "./components/StartOver";
 
 function App() {
   const scrollcontroller = {}; //percetage controler of scroll
@@ -16,13 +20,23 @@ function App() {
     <>
       <Navbar />
 
-      <ScrollSectionContainer height="600vh">
-        <Hero scrollRange={[0, 0.55]} />
+      <ScrollSectionContainer height="500vh">
+        <Hero scrollRange={[0, 0.2]} />
       </ScrollSectionContainer>
 
-      <ScrollSectionContainer height={"400vh"}>
-        <FruitLine scrollRange={[0.7, 0.85]} />
-        <FruitInfo scrollRange={[0.85, 1]} />
+      <ScrollSectionContainer height={"750vh"}>
+        <FruitLine scrollRange={[0.26, 0.4]} />
+        <FruitInfo scrollRange={[0.4, 0.5]} />
+      </ScrollSectionContainer>
+
+      <ScrollSectionContainer height="500vh">
+        <Description />
+      </ScrollSectionContainer>
+      <ScrollSectionContainer height="500vh">
+        <World />
+      </ScrollSectionContainer>
+      <ScrollSectionContainer height="500vh">
+        <StartOver />
       </ScrollSectionContainer>
     </>
   );
