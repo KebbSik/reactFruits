@@ -21,6 +21,7 @@ const Navbar = () => {
     <>
       {!max768 && (
         <nav
+          id="start"
           style={{
             display: "flex",
             flexDirection: "row",
@@ -31,6 +32,7 @@ const Navbar = () => {
             background: theme.color,
             color: theme.textColor,
             padding: ".6rem",
+            zIndex: 999,
           }}
         >
           {fruitList.map((fruit) => (
@@ -39,9 +41,16 @@ const Navbar = () => {
               whileTap={{ scale: 0.8, transition: { duration: 0.1 } }}
               transition={{ duration: 0.1, ease: easeInOut }}
               style={{
+                zIndex: 2,
                 fontSize: max992 ? "1rem" : "1.3rem",
-                padding: max768 ? "0.5rem" : "",
+                padding: max768 ? "0.5rem" : "0.35rem",
                 cursor: "pointer",
+
+                boxShadow:
+                  theme.name === fruit
+                    ? "0 0 30px 15px rgba(255, 255, 255, 0.7)"
+                    : "none",
+                borderRadius: "50px",
               }}
               onClick={() => changeFruit(fruit)}
               key={fruit}
@@ -53,7 +62,10 @@ const Navbar = () => {
       )}
       {max768 && (
         <nav
+          id="start"
           style={{
+            position: "relative",
+            zIndex: 2,
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-around",
@@ -78,6 +90,7 @@ const Navbar = () => {
                 <GiHamburgerMenu
                   style={{
                     fontSize: max480 ? "2rem" : "2.5rem",
+                    cursor: "pointer",
                   }}
                   onClick={() => {
                     setIsActive(!isActive);
@@ -118,7 +131,7 @@ const Navbar = () => {
                 }
                 whileHover={{ scale: 1.1, rotate: [-3, 3] }}
                 whileTap={{ scale: 0.8, transition: { duration: 0.1 } }}
-                transition={{ duration: 0.1, ease: easeInOut }}
+                transition={{ duration: 0.3, ease: easeInOut }}
                 style={{
                   fontSize: max480 ? "1rem" : "1.3rem",
                   padding: "0.8rem",
