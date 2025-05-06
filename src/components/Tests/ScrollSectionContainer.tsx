@@ -18,11 +18,13 @@ const ScrollSectionContainer = ({
         position: "relative",
         // height: "400vh",
         height: height,
+
         border: "1px solid red",
       }}
     >
       <div
         style={{
+          overflow: "hidden",
           position: "sticky",
           top: 0,
           height: "100vh",

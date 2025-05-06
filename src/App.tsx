@@ -10,7 +10,7 @@ import OnScrollLine from "./components/OnScrollLine";
 import FruitInfo from "./components/FruitInfo";
 import ArrowSVG from "./components/DescriptionSecion/Description";
 import Description from "./components/DescriptionSecion/Description";
-import World from "./components/World";
+import World from "./components/World/World";
 import StartOver from "./components/StartOver";
 
 function App() {
@@ -24,16 +24,16 @@ function App() {
         <Hero scrollRange={[0, 0.2]} />
       </ScrollSectionContainer>
 
-      <ScrollSectionContainer height={"750vh"}>
-        <FruitLine scrollRange={[0.26, 0.4]} />
-        <FruitInfo scrollRange={[0.4, 0.5]} />
+      <ScrollSectionContainer height={"500vh"}>
+        <FruitLine scrollRange={[0.2, 0.3]} />
+        <FruitInfo scrollRange={[0.3, 0.4]} />
       </ScrollSectionContainer>
 
       <ScrollSectionContainer height="500vh">
         <Description />
       </ScrollSectionContainer>
       <ScrollSectionContainer height="500vh">
-        <World />
+        <World scrollRange={[0.6, 0.8]} />
       </ScrollSectionContainer>
       <ScrollSectionContainer height="500vh">
         <StartOver />

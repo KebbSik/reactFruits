@@ -12,6 +12,7 @@ const Row = ({ isReversed }: Props) => {
         display: "flex",
         width: "50rem",
         gap: "2rem",
+        clipPath: " polygon(0 0, 100% 0, 100% 53%, 63% 53%, 64% 100%, 0 100%)",
         flexDirection: isReversed ? "row-reverse" : "row",
       }}
     >

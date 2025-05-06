@@ -12,7 +12,7 @@ const FruitLine = ({ scrollRange }: Props) => {
   const { scrollYProgress } = useScroll();
   const pathLenght = useTransform(
     scrollYProgress,
-    scrollRange ? [scrollRange[0], scrollRange[1]] : [0, 0],
+    scrollRange ? [scrollRange[0] * 1.06, scrollRange[1]] : [0, 0],
     [0, 1]
   );
 
