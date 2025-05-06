@@ -25,11 +25,7 @@ const Hero = ({ scrollRange }: Props) => {
     [minRange + absoluteRange * 0.2, minRange + absoluteRange * 0.3],
     ["#ffffff0", theme.color]
   );
-  const boxWidth = useTransform(
-    scrollYProgress,
-    [minRange + absoluteRange * 0.3, minRange + absoluteRange * 0.4],
-    ["50%", "100%"]
-  );
+
   const svgCircleScale = useTransform(
     scrollYProgress,
     [minRange + absoluteRange * 0.55, minRange + absoluteRange * 0.6],
@@ -61,6 +57,21 @@ const Hero = ({ scrollRange }: Props) => {
     [minRange + absoluteRange * 0.85, maxRange],
     ["100vh", "0vh"]
   );
+  const boxWidth = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.3, minRange + absoluteRange * 0.4],
+    ["50%", "100%"]
+  );
+  const svgScale = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.85, maxRange],
+    [1, 0]
+  );
+  const borderRadius = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.85, maxRange],
+    [0, 700]
+  );
 
   return (
     <>
@@ -68,21 +79,23 @@ const Hero = ({ scrollRange }: Props) => {
         style={{
           backgroundColor: svgBackground,
           position: "absolute",
-          width: boxWidth,
-          height: svgBoxHeight,
+          width: "100vw",
+          // height: boxWidth,
           zIndex: -1,
           rotate: boxRotate,
           // border: "1px solid black",
+          borderRadius: borderRadius,
+          scale: svgScale,
         }}
       >
         <motion.svg
-          style={{ backgroundColor: svgBackground }}
-          width="100%"
-          height="100%"
+          style={{ backgroundColor: svgBackground, borderRadius: borderRadius }}
+          width="100vw"
+          height="100vh"
           viewBox="-100 -100 200 200"
         >
           <motion.path
-            d="M 0 -200 V -70 A 70 70 0 1 1 -7.5 -69.6 A -25 -70 100 0 1 0 -70 A 70 70 0 1 1 0 70 V 200  "
+            d="M 0 -300 V -70 A 70 70 0 1 1 -7.5 -69.6 A -25 -70 100 0 1 0 -70 A 70 70 0 1 1 0 70 V 300  "
             fill="none"
             strokeLinecap={"round"}
             strokeWidth={10}
@@ -109,9 +122,9 @@ const Hero = ({ scrollRange }: Props) => {
         <motion.img
           src={theme.svgUrl}
           alt={currentFruit}
-          width={400}
           key={theme.svgUrl}
           style={{
+            width: "min(50%,350px)",
             zIndex: -1,
             scale: svgImgScale,
             rotate: imageRotate,
