@@ -12,12 +12,13 @@ import ArrowSVG from "./components/DescriptionSecion/Description";
 import Description from "./components/DescriptionSecion/Description";
 import World from "./components/World/World";
 import StartOver from "./components/StartOver";
+import Blank from "./components/Blank";
 
 function App() {
   const scrollcontroller = {}; //percetage controler of scroll
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Navbar />
 
       <ScrollSectionContainer height="500vh">
@@ -35,10 +36,11 @@ function App() {
       <ScrollSectionContainer height="500vh">
         <World scrollRange={[0.6, 0.8]} />
       </ScrollSectionContainer>
-      <ScrollSectionContainer height="500vh">
-        <StartOver />
-      </ScrollSectionContainer>
-    </>
+      {/* <ScrollSectionContainer height="500vh"> */}
+      <Blank />
+      <StartOver />
+      {/* </ScrollSectionContainer> */}
+    </div>
   );
 }
 

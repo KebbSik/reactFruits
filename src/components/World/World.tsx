@@ -4,7 +4,7 @@ import WordSVG from "./WorldSVG";
 import { CgEnter } from "react-icons/cg";
 import { motion, useScroll, useTransform } from "motion/react";
 import { div, path } from "motion/react-client";
-import paths from "./World";
+import paths from "./WorldPaths";
 interface Props {
   scrollRange?: [number, number];
 }

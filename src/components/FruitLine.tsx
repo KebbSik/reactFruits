@@ -23,7 +23,6 @@ const FruitLine = ({ scrollRange }: Props) => {
         top: 0,
         left: "5%",
         height: "100vh",
-        width: 300,
       }}
     >
       <svg height={"100%"} viewBox="0 0 380 1000" fill="none">

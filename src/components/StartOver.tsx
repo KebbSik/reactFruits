@@ -28,11 +28,15 @@ const StartOver = () => {
   return (
     <div
       style={{
-        position: "relative",
+        // position: "relative",
+        position: "fixed",
+        top: 0,
         width: "100%",
+        height: "100vh",
         display: "flex",
         justifyContent: "center",
         backgroundColor: theme.transparentColor,
+        zIndex: -1,
       }}
     >
       {/* dark onScroll background */}
