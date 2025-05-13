@@ -1,12 +1,15 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { div } from "motion/react-client";
 import React from "react";
+import useMaxScreenSize from "../hooks/useMaxScreenSize";
 
 interface Props {
   scrollRange?: [number, number];
 }
 
 const FruitInfo = ({ scrollRange }: Props) => {
+  const { max480, max768, max992, max1280, max1400 } = useMaxScreenSize();
+
   const minRange = scrollRange ? scrollRange[0] : 0;
   const maxRange = scrollRange ? scrollRange[1] : 0;
   const absoluteRange = scrollRange ? scrollRange[1] - scrollRange[0] : 0;
@@ -51,13 +54,14 @@ const FruitInfo = ({ scrollRange }: Props) => {
     [minRange + absoluteRange * 0.75, maxRange],
     [0, 1]
   );
+
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "flex-end",
         width: "100%",
-        padding: "5rem",
+        padding: max992 ? "0.5rem" : "5rem",
       }}
     >
       <ul
@@ -66,7 +70,8 @@ const FruitInfo = ({ scrollRange }: Props) => {
           flexDirection: "column",
           justifyContent: "space-around",
           alignItems: "end",
-          fontSize: "1rem",
+
+          fontSize: max992 ? "0.8rem" : "1rem",
           //   listStyle: "none",
         }}
       >

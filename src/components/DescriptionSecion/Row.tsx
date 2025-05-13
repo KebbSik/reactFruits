@@ -10,10 +10,12 @@ const Row = ({ isReversed }: Props) => {
     <div
       style={{
         display: "flex",
+        // flexWrap: "wrap",
         width: "50rem",
         gap: "2rem",
-        clipPath: " polygon(0 0, 100% 0, 100% 53%, 63% 53%, 64% 100%, 0 100%)",
         flexDirection: isReversed ? "row-reverse" : "row",
+        border: "1px solid black",
+        padding: "2rem",
       }}
     >
       <img

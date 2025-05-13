@@ -31,7 +31,7 @@ function App() {
       </ScrollSectionContainer>
 
       <ScrollSectionContainer height="500vh">
-        <Description />
+        <Description scrollRange={[0.4, 0.6]} />
       </ScrollSectionContainer>
       <ScrollSectionContainer height="500vh">
         <World scrollRange={[0.6, 0.8]} />

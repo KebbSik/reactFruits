@@ -8,6 +8,7 @@ const Blank = () => {
         height: "100vh",
         display: "flex",
         justifyContent: "center",
+        pointerEvents: "none",
       }}
     ></div>
   );

@@ -12,7 +12,7 @@ const FruitLine = ({ scrollRange }: Props) => {
   const { scrollYProgress } = useScroll();
   const pathLenght = useTransform(
     scrollYProgress,
-    scrollRange ? [scrollRange[0] * 1.06, scrollRange[1]] : [0, 0],
+    scrollRange ? [scrollRange[0] * 1.27, scrollRange[1]] : [0, 0],
     [0, 1]
   );
 
@@ -32,7 +32,7 @@ const FruitLine = ({ scrollRange }: Props) => {
           d={theme.line}
           style={{
             stroke: "black",
-            strokeWidth: "3",
+            strokeWidth: "5",
           }}
         />
       </svg>
