@@ -4,6 +4,9 @@ import React from "react";
 import Row from "./Row";
 import ScrollSectionContainer from "../Tests/ScrollSectionContainer";
 import { useTheme } from "../../contexts/ThemeContext";
+import plate from "../../assets/Plate (1).svg";
+import fork from "../../assets/Fork.svg";
+import knife from "../../assets/Knife.svg";
 
 interface Props {
   scrollRange?: [number, number];
@@ -11,6 +14,7 @@ interface Props {
 
 const Description = ({ scrollRange }: Props) => {
   const { theme } = useTheme();
+
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
   const maxRange = scrollRange ? scrollRange[1] : 0;
@@ -27,11 +31,33 @@ const Description = ({ scrollRange }: Props) => {
     ["100vh", "0vh"]
   );
 
+  const rowOneRotate = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.5, minRange + absoluteRange * 0.7],
+    [-30, 0]
+  );
+
+  const rowTwoRotate = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.7, minRange + absoluteRange * 0.9],
+    [30, 0]
+  );
+  const plateRotation = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.5, minRange + absoluteRange * 0.9],
+    [0, 720]
+  );
   const bgColor = useTransform(
     scrollYProgress,
     [minRange + absoluteRange * 0.5, maxRange],
     ["#ffffff", theme.color.toString()]
   );
+  const boxColor = useTransform(
+    scrollYProgress,
+    [minRange + absoluteRange * 0.5, maxRange],
+    ["rgba(0,0,0,0.1)", "rgba(255,255,255,0.7)"]
+  );
+  const x = 0;
 
   return (
     <motion.div
@@ -46,14 +72,113 @@ const Description = ({ scrollRange }: Props) => {
         backgroundColor: bgColor,
       }}
     >
-      <motion.div style={{ position: "absolute" }}>
-        <Row />
-      </motion.div>
-      <motion.div style={{ position: "absolute", y: rowOneY }}>
-        <Row isReversed />
-      </motion.div>
-      <motion.div style={{ position: "absolute", y: rowTwoY }}>
-        <Row />
+      {/* <motion.div
+        style={{
+          position: "absolute",
+          width: 200,
+          height: 200,
+          background: "white",
+          
+        }}
+      >
+        asdfasdf
+      </motion.div> */}
+      <motion.div
+        className="wrapper"
+        style={{
+          position: "relative",
+          width: "70%",
+          height: "60%",
+          display: "flex",
+          justifyContent: "center",
+          gap: "1rem",
+          padding: "2.5rem",
+          background: boxColor,
+          // border: "5px solid black",
+          borderRadius: 100,
+        }}
+      >
+        <div
+          style={{
+            height: "100%",
+            display: "flex",
+            flex: 1,
+            position: "relative",
+          }}
+        >
+          <motion.svg
+            width={"100%"}
+            height={"100%"}
+            viewBox="-100 -100 200 200"
+            // viewBox="-200 -200 1000 1000"
+          >
+            <motion.g style={{ rotate: plateRotation }}>
+              <motion.image href={plate} x={-50} y={-50} height={100} />
+            </motion.g>
+            <image href={fork} x={-90} y={-50} height={100} />
+            <image href={knife} x={70} y={-50} height={100} />
+          </motion.svg>
+
+          <motion.svg
+            width={"100%"}
+            height={"100%"}
+            // viewBox="-100 -100 200 200"
+            viewBox="-200 -200 900 1000"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+            }}
+          >
+            <motion.path
+              d={theme.icon}
+              animate={{
+                stroke: theme.color,
+                fill: theme.color,
+              }}
+              transition={{ duration: 0.5 }}
+              style={{
+                rotate: plateRotation,
+                scale: 0.5,
+              }}
+              strokeWidth={1}
+            />
+          </motion.svg>
+        </div>
+
+        <div
+          style={{
+            width: "50%",
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <motion.div style={{ position: "absolute", x }}>
+            <Row />
+          </motion.div>
+          <motion.div
+            style={{
+              position: "absolute",
+              x,
+              y: rowOneY,
+              rotate: rowOneRotate,
+            }}
+          >
+            <Row isReversed />
+          </motion.div>
+          <motion.div
+            style={{
+              position: "absolute",
+              x,
+              y: rowTwoY,
+              rotate: rowTwoRotate,
+            }}
+          >
+            <Row />
+          </motion.div>
+        </div>
       </motion.div>
     </motion.div>
   );

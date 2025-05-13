@@ -36,10 +36,9 @@ function App() {
       <ScrollSectionContainer height="500vh">
         <World scrollRange={[0.6, 0.8]} />
       </ScrollSectionContainer>
-      {/* <ScrollSectionContainer height="500vh"> */}
+
       <Blank />
       <StartOver />
-      {/* </ScrollSectionContainer> */}
     </div>
   );
 }
