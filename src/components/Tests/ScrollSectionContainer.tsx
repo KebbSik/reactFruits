@@ -19,7 +19,7 @@ const ScrollSectionContainer = ({
         // height: "400vh",
         height: height,
 
-        border: "1px solid red",
+        // border: "1px solid red",
       }}
     >
       <div

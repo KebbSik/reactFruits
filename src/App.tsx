@@ -38,9 +38,9 @@ function App() {
         <World scrollRange={[0.6, 0.8]} />
       </ScrollSectionContainer>
 
+      <StartOver />
       <Blank />
       <ChooseTheme />
-      <StartOver />
     </div>
   );
 }

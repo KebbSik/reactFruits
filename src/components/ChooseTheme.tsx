@@ -41,6 +41,7 @@ const ChooseTheme = () => {
               transition: "all .1s easeInOut",
             }}
             whileHover={{ scale: theme.name === fruit ? 1.5 : 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <img
               style={{ height: "4rem", width: "70%", objectFit: "contain" }}
