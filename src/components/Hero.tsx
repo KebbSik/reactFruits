@@ -64,7 +64,7 @@ const Hero = ({ scrollRange }: Props) => {
   );
   const svgScale = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.85, maxRange],
+    [minRange + absoluteRange * 0.85, maxRange + absoluteRange * 0.15],
     [1, 0]
   );
   const borderRadius = useTransform(

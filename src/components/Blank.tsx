@@ -9,6 +9,7 @@ const Blank = () => {
         display: "flex",
         justifyContent: "center",
         pointerEvents: "none",
+        zIndex: -1,
       }}
     ></div>
   );

@@ -13,6 +13,7 @@ import Description from "./components/DescriptionSecion/Description";
 import World from "./components/World/World";
 import StartOver from "./components/StartOver";
 import Blank from "./components/Blank";
+import ChooseTheme from "./components/ChooseTheme";
 
 function App() {
   const scrollcontroller = {}; //percetage controler of scroll
@@ -38,9 +39,9 @@ function App() {
       </ScrollSectionContainer>
 
       <Blank />
+      <ChooseTheme />
       <StartOver />
     </div>
   );
 }
-
 export default App;

@@ -36,6 +36,7 @@ const StartOver = () => {
         display: "flex",
         justifyContent: "center",
         backgroundColor: theme.transparentColor,
+        // zIndex: isScrolling ? 1 : 0,
         zIndex: -1,
       }}
     >
@@ -53,7 +54,7 @@ const StartOver = () => {
               left: 0,
               width: "100vw",
               height: "100vh",
-              backgroundColor: "rgba(0, 0, 0, 0.9)",
+              backgroundColor: "rgba(0, 0, 0, 1)",
               zIndex: 9999,
               pointerEvents: "none",
             }}

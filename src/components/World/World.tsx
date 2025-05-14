@@ -18,18 +18,18 @@ const World = ({ scrollRange }: Props) => {
 
   const titleOpacity = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.1, minRange + absoluteRange * 0.3],
+    [minRange + absoluteRange * 0.75, minRange + absoluteRange * 0.8],
     [1, 0]
   );
 
   const titleScale = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.1, minRange + absoluteRange * 0.3],
+    [minRange + absoluteRange * 0.75, minRange + absoluteRange * 0.8],
     [1, 6]
   );
   const pathLength = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.3, minRange + absoluteRange * 0.7],
+    [minRange + absoluteRange * 0.8, minRange + absoluteRange * 1],
     [0, 1]
   );
 
