@@ -1,11 +1,13 @@
 import React from "react";
 import { useTheme } from "../../contexts/ThemeContext";
+import useMaxScreenSize from "../../hooks/useMaxScreenSize";
 
 interface Props {
   isReversed?: boolean;
 }
 
 const Row = ({ isReversed }: Props) => {
+  const { max1280, max992, max768, max480 } = useMaxScreenSize();
   const { theme } = useTheme();
   const firstLetter = theme.name[0].toLowerCase();
 
@@ -23,9 +25,9 @@ const Row = ({ isReversed }: Props) => {
         gap: "2rem",
         flexDirection: isReversed ? "row-reverse" : "row",
         border: "3px solid black",
-        padding: "2rem",
+        padding: max1280 ? "1rem" : "2rem",
         background: "white",
-        borderRadius: 20,
+        borderRadius: 50,
       }}
     >
       <div
@@ -37,9 +39,22 @@ const Row = ({ isReversed }: Props) => {
           flexDirection: "column",
         }}
       >
-        <p style={{ fontSize: "1.6rem", fontWeight: "bold" }}>Title</p>
+        <p
+          style={{
+            fontSize: max1280 ? (max768 ? "1.5rem" : "1rem") : "1.6rem",
+            fontWeight: "bold",
+          }}
+        >
+          Title
+        </p>
 
-        <p style={{ fontSize: "1rem", lineHeight: 1.5 }}>
+        <p
+          style={{
+            // fontSize: max1280 ? (max768 ? "1rem" : "0.9rem") : "1rem",
+            fontSize: "1rem",
+            lineHeight: 1.5,
+          }}
+        >
           {paragraph.split("").map((char, i) => (
             <span
               key={i}

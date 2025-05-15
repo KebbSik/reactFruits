@@ -7,6 +7,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import plate from "../../assets/Plate (1).svg";
 import fork from "../../assets/Fork.svg";
 import knife from "../../assets/Knife.svg";
+import useMaxScreenSize from "../../hooks/useMaxScreenSize";
 
 interface Props {
   scrollRange?: [number, number];
@@ -14,7 +15,7 @@ interface Props {
 
 const Description = ({ scrollRange }: Props) => {
   const { theme } = useTheme();
-
+  const { max1280, max992, max768, max480 } = useMaxScreenSize();
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
   const maxRange = scrollRange ? scrollRange[1] : 0;
@@ -87,15 +88,16 @@ const Description = ({ scrollRange }: Props) => {
         className="wrapper"
         style={{
           position: "relative",
-          width: "70%",
-          height: "60%",
+          width: max992 ? "95%" : "80%",
+          height: max480 ? "95% " : "80%",
           display: "flex",
           justifyContent: "center",
+          // flexDirection: "column",
           gap: "1rem",
           padding: "2.5rem",
           background: boxColor,
           // border: "5px solid black",
-          borderRadius: 100,
+          borderRadius: 50,
         }}
       >
         <div
@@ -149,7 +151,7 @@ const Description = ({ scrollRange }: Props) => {
 
         <div
           style={{
-            width: "50%",
+            width: max768 ? "100%" : "50%",
             position: "relative",
             display: "flex",
             alignItems: "center",

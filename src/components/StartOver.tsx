@@ -11,7 +11,7 @@ import useMaxScreenSize from "../hooks/useMaxScreenSize";
 const StartOver = () => {
   const { theme } = useTheme();
   const [isScrolling, setIsScrolling] = useState(false);
-  const { max992, max768, max480 } = useMaxScreenSize();
+  const { max1280, max992, max768, max480 } = useMaxScreenSize();
 
   const scroller = () => {
     setIsScrolling(true);
@@ -49,7 +49,13 @@ const StartOver = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontSize: "8rem",
+              fontSize: max1280
+                ? max768
+                  ? max480
+                    ? "2.7rem"
+                    : "5rem"
+                  : "8rem"
+                : "12rem",
             }}
           >
             <motion.div
