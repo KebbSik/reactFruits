@@ -41,7 +41,7 @@ const Row = ({ isReversed }: Props) => {
       >
         <p
           style={{
-            fontSize: max1280 ? (max768 ? "1.5rem" : "1rem") : "1.6rem",
+            fontSize: "1.5rem",
             fontWeight: "bold",
           }}
         >

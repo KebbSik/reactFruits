@@ -5,11 +5,13 @@ import { CgEnter } from "react-icons/cg";
 import { motion, useScroll, useTransform } from "motion/react";
 import { div, path } from "motion/react-client";
 import paths from "./WorldPaths";
+import useMaxScreenSize from "../../hooks/useMaxScreenSize";
 interface Props {
   scrollRange?: [number, number];
 }
 
 const World = ({ scrollRange }: Props) => {
+  const { max1280, max992, max768, max480 } = useMaxScreenSize();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
@@ -41,10 +43,17 @@ const World = ({ scrollRange }: Props) => {
           width: "100%",
           background: theme.color,
           height: "100vh",
-          fontSize: "5rem",
+          fontSize: max1280
+            ? max768
+              ? max480
+                ? "2.7rem"
+                : "4.5rem"
+              : "8rem"
+            : "10rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          textAlign: "center",
           color: theme.textColor,
           opacity: titleOpacity,
           scale: titleScale,

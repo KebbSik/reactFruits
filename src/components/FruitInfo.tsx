@@ -75,22 +75,22 @@ const FruitInfo = ({ scrollRange }: Props) => {
           //   listStyle: "none",
         }}
       >
-        <motion.li style={{ x: info1, opacity: info1Opacity }}>
+        <motion.div style={{ x: info1, opacity: info1Opacity }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
           Fugiat, cupiditate.
-        </motion.li>
-        <motion.li style={{ x: info2, opacity: info2Opacity }}>
+        </motion.div>
+        <motion.div style={{ x: info2, opacity: info2Opacity }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
           Fugiat, cupiditate.
-        </motion.li>
-        <motion.li style={{ x: info3, opacity: info3Opacity }}>
+        </motion.div>
+        <motion.div style={{ x: info3, opacity: info3Opacity }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
           Fugiat, cupiditate.
-        </motion.li>
-        <motion.li style={{ x: info4, opacity: info4Opacity }}>
+        </motion.div>
+        <motion.div style={{ x: info4, opacity: info4Opacity }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
           Fugiat, cupiditate.
-        </motion.li>
+        </motion.div>
       </ul>
     </div>
   );

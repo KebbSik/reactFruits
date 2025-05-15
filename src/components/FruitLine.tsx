@@ -2,12 +2,14 @@ import { easeInOut } from "motion";
 import { motion, motionValue, useScroll, useTransform } from "motion/react";
 import React, { useEffect } from "react";
 import { useTheme } from "../contexts/ThemeContext";
+import useMaxScreenSize from "../hooks/useMaxScreenSize";
 
 interface Props {
   scrollRange?: [number, number];
 }
 
 const FruitLine = ({ scrollRange }: Props) => {
+  const { max768 } = useMaxScreenSize();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll();
   const pathLenght = useTransform(
@@ -21,7 +23,8 @@ const FruitLine = ({ scrollRange }: Props) => {
       style={{
         position: "absolute",
         top: 0,
-        left: "5%",
+        left: max768 ? "50%" : "5%",
+        transform: max768 ? "translateX(-50%)" : "",
         height: "100vh",
       }}
     >
