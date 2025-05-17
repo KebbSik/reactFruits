@@ -35,7 +35,7 @@ const FruitLine = ({ scrollRange }: Props) => {
           d={theme.line}
           style={{
             stroke: "black",
-            strokeWidth: "5",
+            strokeWidth: "6",
           }}
         />
       </svg>

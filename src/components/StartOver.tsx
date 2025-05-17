@@ -59,9 +59,10 @@ const StartOver = () => {
             }}
           >
             <motion.div
-              initial={{ y: 200 }}
-              animate={{ y: 0 }}
-              exit={{ y: -200 }}
+            // initial={{ y: 200 }}
+            // animate={{ y: 0 }}
+            // exit={{ y: 200 }}
+            // transition={{ duration: 1 }}
             >
               Loading . . .
             </motion.div>
