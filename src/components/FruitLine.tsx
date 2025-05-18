@@ -9,7 +9,7 @@ interface Props {
 }
 
 const FruitLine = ({ scrollRange }: Props) => {
-  const { max768 } = useMaxScreenSize();
+  const { max992 } = useMaxScreenSize();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll();
   const pathLenght = useTransform(
@@ -23,8 +23,8 @@ const FruitLine = ({ scrollRange }: Props) => {
       style={{
         position: "absolute",
         top: 0,
-        left: max768 ? "50%" : "5%",
-        transform: max768 ? "translateX(-50%)" : "",
+        left: max992 ? "50%" : "5%",
+        transform: max992 ? "translateX(-50%)" : "",
         height: "100vh",
       }}
     >

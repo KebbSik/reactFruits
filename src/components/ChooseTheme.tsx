@@ -20,7 +20,7 @@ const ChooseTheme = () => {
         borderLeft: 0,
         background: "#fff",
         borderRadius: " 0px 40px 40px 0px",
-        padding: "20px 20px",
+        padding: "16px 16px",
         x: "-100%",
         y: "-50%",
       }}
@@ -35,7 +35,7 @@ const ChooseTheme = () => {
           alignItems: "center",
           flexDirection: "column",
           // width: "5rem",
-          gap: "1rem",
+          gap: "1.15rem",
         }}
       >
         <div
