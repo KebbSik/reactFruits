@@ -62,8 +62,6 @@ const World = ({ scrollRange }: Props) => {
         <p>Map of apperance</p>
       </motion.div>
       <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100vh"
         viewBox="0 0 1920 1032"
@@ -83,7 +81,7 @@ const World = ({ scrollRange }: Props) => {
             key={index}
             d={path}
             stroke={theme.color}
-            strokeWidth={20}
+            strokeWidth={10}
             strokeLinecap="round"
             fill={"none"}
             pathLength={pathLength}

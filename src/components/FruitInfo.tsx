@@ -67,6 +67,9 @@ const FruitInfo = ({ scrollRange }: Props) => {
     [0, 1]
   );
 
+  const infoX = [info1, info2, info3, info4];
+  const infoOpacity = [info1Opacity, info2Opacity, info3Opacity, info4Opacity];
+
   return (
     <div
       style={{
@@ -76,8 +79,6 @@ const FruitInfo = ({ scrollRange }: Props) => {
         width: "100%",
         height: "100%",
         padding: max992 ? "0.5rem" : "5rem",
-
-        // transform: "translateX(-80%)",
       }}
     >
       <div
@@ -88,7 +89,6 @@ const FruitInfo = ({ scrollRange }: Props) => {
           justifyContent: "space-around",
           alignItems: "center",
           textAlign: "center",
-          // fontSize: max992 ? "0.8rem" : "1.1rem",
           fontSize: max1280
             ? max992
               ? max768
@@ -132,59 +132,21 @@ const FruitInfo = ({ scrollRange }: Props) => {
             height: "100%",
           }}
         >
-          <motion.div
-            style={{
-              x: info1,
-              opacity: info1Opacity,
-              // color: theme.textColor,
-              background: "#fff",
-              padding: "1rem",
-              borderRadius: "50px",
-              border: `5px solid ${theme.transparentColor}`,
-            }}
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
-            Fugiat, cupiditate.
-          </motion.div>
-          <motion.div
-            style={{
-              x: info2,
-              opacity: info2Opacity,
-              background: "#fff",
-              padding: "1rem",
-              borderRadius: "50px",
-              border: `5px solid ${theme.transparentColor}`,
-            }}
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
-            Fugiat, cupiditate.
-          </motion.div>
-          <motion.div
-            style={{
-              x: info3,
-              opacity: info3Opacity,
-              background: "#fff",
-              padding: "1rem",
-              borderRadius: "50px",
-              border: `5px solid ${theme.transparentColor}`,
-            }}
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
-            Fugiat, cupiditate.
-          </motion.div>
-          <motion.div
-            style={{
-              x: info4,
-              opacity: info4Opacity,
-              padding: "1rem",
-              borderRadius: "50px",
-              background: "#fff",
-              border: `5px solid ${theme.transparentColor}`,
-            }}
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing emotion.lit.
-            Fugiat, cupiditate.
-          </motion.div>
+          {theme.info.facts.map((fact, index) => (
+            <motion.div
+              style={{
+                x: infoX[index],
+                opacity: infoOpacity[index],
+                background: "#fff",
+                padding: "1rem",
+                borderRadius: "50px",
+                border: `5px solid ${theme.transparentColor}`,
+                textAlign: "center",
+              }}
+            >
+              {fact}
+            </motion.div>
+          ))}
         </ul>
       </div>
     </div>

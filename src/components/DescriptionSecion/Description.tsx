@@ -158,7 +158,10 @@ const Description = ({ scrollRange }: Props) => {
           }}
         >
           <motion.div style={{ position: "absolute", x }}>
-            <Row />
+            <Row
+              title="Appearance"
+              content={theme.info.descriptions.appearance}
+            />
           </motion.div>
           <motion.div
             style={{
@@ -168,7 +171,11 @@ const Description = ({ scrollRange }: Props) => {
               rotate: rowOneRotate,
             }}
           >
-            <Row isReversed />
+            <Row
+              title="History"
+              content={theme.info.descriptions.history}
+              isReversed
+            />
           </motion.div>
           <motion.div
             style={{
@@ -178,7 +185,10 @@ const Description = ({ scrollRange }: Props) => {
               rotate: rowTwoRotate,
             }}
           >
-            <Row />
+            <Row
+              title="Health Benefits"
+              content={theme.info.descriptions.healthBenefits}
+            />
           </motion.div>
         </div>
       </motion.div>

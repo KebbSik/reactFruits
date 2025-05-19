@@ -18,7 +18,7 @@ const Info = ({ scrollRange }: Props) => {
   const x = useTransform(
     scrollYProgress,
     [minRange + absoluteRange * 0.8, maxRange],
-    ["0", "-100%"]
+    ["0", "-180%"]
   );
   const borderWidth = 5;
   return (
@@ -36,16 +36,12 @@ const Info = ({ scrollRange }: Props) => {
         height={"100%"}
         viewBox="0 0 150 150"
         style={{
-          borderLeft: `${borderWidth}px solid black`,
+          // borderLeft: `${borderWidth}px solid black`,
           position: "absolute",
           x: "100%",
         }}
       >
-        <motion.g
-          id="Palm"
-          fill="white"
-          transform="translate(-91,50) scale(0.5)"
-        >
+        <motion.g id="Palm" fill="white" transform="translate(0,50) scale(0.5)">
           <g id="Vector 33">
             <path
               d="M 23 53 C 60 60 70 70 79 50"
@@ -64,6 +60,8 @@ const Info = ({ scrollRange }: Props) => {
               stroke-linecap="round"
               stroke-linejoin="round"
             />
+            <path d="M 2 -100 V 200" stroke="#000" strokeWidth={5}></path>
+            {/* <path d="M 0 197.5 H 1000" stroke="#000" strokeWidth={5}></path> */}
           </g>
           <path
             id="Vector 34"
@@ -98,10 +96,10 @@ const Info = ({ scrollRange }: Props) => {
           href={theme.svgUrl}
           width={100}
           height={100}
-          x={-70}
+          x={21}
           y={20}
         />
-        <motion.g id="Eyes" transform="translate(-60,50) scale(0.5)">
+        <motion.g id="Eyes" transform="translate(31,50) scale(0.5)">
           <path
             id="Ellipse 5"
             d="M17 1.5C21.0786 1.5 24.9176 3.83162 27.7969 7.89648C30.6736 11.9577 32.5 17.6465 32.5 24C32.5 30.3535 30.6736 36.0423 27.7969 40.1035C24.9176 44.1684 21.0786 46.5 17 46.5C12.9214 46.5 9.0824 44.1684 6.20312 40.1035C3.32643 36.0423 1.5 30.3535 1.5 24C1.5 17.6465 3.32643 11.9577 6.20312 7.89648C9.0824 3.83162 12.9214 1.5 17 1.5Z"
