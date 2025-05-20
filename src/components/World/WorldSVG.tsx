@@ -5,8 +5,8 @@ const WordSVG = () => {
   return (
     <g
       transform="translate(0.000000,1032.000000) scale(0.100000,-0.100000)"
-      fill="#000000"
-      stroke="none"
+      fill="#adadad"
+      // stroke="black"
     >
       <path
         d="M6233 9855 c-282 -21 -428 -36 -438 -45 -18 -15 -20 -61 -3 -78 9 -9
