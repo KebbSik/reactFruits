@@ -1,23 +1,16 @@
-import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import { Fruit } from "./constants/FruitsMap";
 import Hero from "./components/Hero";
-import FruitLine from "./components/FruitLine";
+import Navbar from "./components/Navbar";
 
-import { motion, useScroll } from "motion/react";
-import ScrollSectionContainer from "./components/Tests/ScrollSectionContainer";
-import OnScrollLine from "./components/OnScrollLine";
-import FruitInfo from "./components/FruitInfo";
-import ArrowSVG from "./components/DescriptionSecion/Description";
-import Description from "./components/DescriptionSecion/Description";
-import World from "./components/World/World";
-import StartOver from "./components/StartOver";
 import Blank from "./components/Blank";
 import ChooseTheme from "./components/ChooseTheme";
+import Description from "./components/DescriptionSecion/Description";
 import Info from "./components/Info";
+import StartOver from "./components/StartOver";
+import ScrollSectionContainer from "./components/Tests/ScrollSectionContainer";
+import World from "./components/World/World";
 
 function App() {
-  const scrollcontroller = {}; //percetage controler of scroll
+  // const scrollcontroller = {}; //percetage controler of scroll
   const sectionHeight = "800vh";
   return (
     <div style={{ position: "relative" }}>

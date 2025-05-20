@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+// import { useRef } from "react";
 
 // interface Props {
 //   height: string;

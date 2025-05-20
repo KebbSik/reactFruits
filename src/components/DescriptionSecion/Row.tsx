@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 import useMaxScreenSize from "../../hooks/useMaxScreenSize";
 
@@ -9,7 +8,7 @@ interface Props {
 }
 
 const Row = ({ isReversed, content, title }: Props) => {
-  const { max1280, max992, max768, max480 } = useMaxScreenSize();
+  const { max1280 } = useMaxScreenSize();
   const { theme } = useTheme();
   const firstLetter = theme.name[0].toLowerCase();
 

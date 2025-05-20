@@ -1,14 +1,12 @@
-import { div, feSpotLight } from "motion/react-client";
-import React, { useEffect, useState } from "react";
-import { Fruit } from "../constants/FruitsMap";
-import { addScaleCorrector, easeInOut, motion } from "motion/react";
-import useMaxScreenSize from "../hooks/useMaxScreenSize";
-import { useTheme } from "../contexts/ThemeContext";
-import { fruitList } from "../constants/FruitsMap";
+import { easeInOut, motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { fruitList } from "../constants/FruitsMap";
+import { useTheme } from "../contexts/ThemeContext";
+import useMaxScreenSize from "../hooks/useMaxScreenSize";
 
 const Navbar = () => {
-  const { max480, max768, max992, max1280, max1400 } = useMaxScreenSize();
+  const { max480, max768, max992 } = useMaxScreenSize();
   const [isActive, setIsActive] = useState(false);
   const { theme, changeFruit } = useTheme();
 

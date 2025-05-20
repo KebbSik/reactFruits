@@ -1,8 +1,7 @@
-import React from "react";
-import FruitLine from "./FruitLine";
-import FruitInfo from "./FruitInfo";
-import { useTheme } from "../contexts/ThemeContext";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useTheme } from "../contexts/ThemeContext";
+import FruitInfo from "./FruitInfo";
+import FruitLine from "./FruitLine";
 
 interface Props {
   scrollRange?: [number, number];
@@ -20,7 +19,7 @@ const Info = ({ scrollRange }: Props) => {
     [minRange + absoluteRange * 0.8, maxRange],
     ["0", "-180%"]
   );
-  const borderWidth = 5;
+
   return (
     <motion.div
       style={{

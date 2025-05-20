@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { fruitList, themeMap, Fruit } from "../constants/FruitsMap";
-import { useTheme } from "../contexts/ThemeContext";
 import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
-import { animateScroll as scroll } from "react-scroll";
 import { MdOutlineReplay } from "react-icons/md";
-import { wrap } from "motion";
+import { animateScroll as scroll } from "react-scroll";
 import useMaxScreenSize from "../hooks/useMaxScreenSize";
 
 const StartOver = () => {

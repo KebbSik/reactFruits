@@ -1,13 +1,10 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { div } from "motion/react-client";
-import React from "react";
-import Row from "./Row";
-import ScrollSectionContainer from "../Tests/ScrollSectionContainer";
-import { useTheme } from "../../contexts/ThemeContext";
-import plate from "../../assets/Plate (1).svg";
 import fork from "../../assets/Fork.svg";
 import knife from "../../assets/Knife.svg";
+import plate from "../../assets/Plate (1).svg";
+import { useTheme } from "../../contexts/ThemeContext";
 import useMaxScreenSize from "../../hooks/useMaxScreenSize";
+import Row from "./Row";
 
 interface Props {
   scrollRange?: [number, number];
@@ -15,7 +12,7 @@ interface Props {
 
 const Description = ({ scrollRange }: Props) => {
   const { theme } = useTheme();
-  const { max1280, max992, max768, max480 } = useMaxScreenSize();
+  const { max992, max768, max480 } = useMaxScreenSize();
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
   const maxRange = scrollRange ? scrollRange[1] : 0;

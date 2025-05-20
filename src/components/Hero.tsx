@@ -1,7 +1,7 @@
 import { easeInOut } from "motion";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
-import OnScrollLine from "./OnScrollLine";
+// import OnScrollLine from "./OnScrollLine";
 
 interface Props {
   scrollRange?: [number, number];
@@ -52,16 +52,16 @@ const Hero = ({ scrollRange }: Props) => {
     [minRange + absoluteRange * 0.7, minRange + absoluteRange * 0.85],
     [0, 90]
   );
-  const svgBoxHeight = useTransform(
-    scrollYProgress,
-    [minRange + absoluteRange * 0.85, maxRange],
-    ["100vh", "0vh"]
-  );
-  const boxWidth = useTransform(
-    scrollYProgress,
-    [minRange + absoluteRange * 0.3, minRange + absoluteRange * 0.4],
-    ["50%", "100%"]
-  );
+  // const svgBoxHeight = useTransform(
+  //   scrollYProgress,
+  //   [minRange + absoluteRange * 0.85, maxRange],
+  //   ["100vh", "0vh"]
+  // );
+  // const boxWidth = useTransform(
+  //   scrollYProgress,
+  //   [minRange + absoluteRange * 0.3, minRange + absoluteRange * 0.4],
+  //   ["50%", "100%"]
+  // );
   const svgScale = useTransform(
     scrollYProgress,
     [minRange + absoluteRange * 0.85, maxRange + absoluteRange * 0.15],

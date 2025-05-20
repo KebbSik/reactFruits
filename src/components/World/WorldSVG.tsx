@@ -1,5 +1,5 @@
-import { path } from "motion/react-client";
-import React from "react";
+// import { path } from "motion/react-client";
+// import React from "react";
 
 const WordSVG = () => {
   return (

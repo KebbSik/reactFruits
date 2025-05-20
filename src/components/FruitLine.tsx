@@ -1,6 +1,4 @@
-import { easeInOut } from "motion";
-import { motion, motionValue, useScroll, useTransform } from "motion/react";
-import React, { useEffect } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
 import useMaxScreenSize from "../hooks/useMaxScreenSize";
 

@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-import * as React from "react";
 import { SVGProps } from "react";
 const StrawberrySVG = (props: SVGProps<SVGSVGElement>) => (
   <svg

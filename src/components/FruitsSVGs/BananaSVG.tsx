@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import * as React from "react";
 import { SVGProps } from "react";
 const BananaSVG = (props: SVGProps<SVGSVGElement>) => (
   // <div style={{ position: "absolute", height: "100vh", width: 300 }}>

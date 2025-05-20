@@ -1,21 +1,18 @@
-import React from "react";
-import { useTheme } from "../../contexts/ThemeContext";
-import WordSVG from "./WorldSVG";
-import { CgEnter } from "react-icons/cg";
 import { motion, useScroll, useTransform } from "motion/react";
-import { div, path, text } from "motion/react-client";
-import paths from "./WorldPaths";
+import { useTheme } from "../../contexts/ThemeContext";
 import useMaxScreenSize from "../../hooks/useMaxScreenSize";
+import paths from "./WorldPaths";
+import WordSVG from "./WorldSVG";
 interface Props {
   scrollRange?: [number, number];
 }
 
 const World = ({ scrollRange }: Props) => {
-  const { max1280, max992, max768, max480 } = useMaxScreenSize();
+  const { max1280, max768, max480 } = useMaxScreenSize();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
-  const maxRange = scrollRange ? scrollRange[1] : 0;
+  // const maxRange = scrollRange ? scrollRange[1] : 0;
   const absoluteRange = scrollRange ? scrollRange[1] - scrollRange[0] : 0;
 
   const titleOpacity = useTransform(
