@@ -1,5 +1,4 @@
-import { SVGProps } from "react";
-const StrawberrySVG = (props: SVGProps<SVGSVGElement>) => (
+const StrawberrySVG = () => (
   <svg
     viewBox="0 -160 1049 1049"
     version="1.1"

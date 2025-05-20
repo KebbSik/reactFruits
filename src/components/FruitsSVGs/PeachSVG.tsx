@@ -1,5 +1,4 @@
-import { SVGProps } from "react";
-const PeachSVG = (props: SVGProps<SVGSVGElement>) => (
+const PeachSVG = () => (
   <svg
     viewBox="0 -50 1024 1024"
     version="1.1"

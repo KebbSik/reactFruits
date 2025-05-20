@@ -1,5 +1,4 @@
-import { SVGProps } from "react";
-const WatermelonSVG = (props: SVGProps<SVGSVGElement>) => (
+const WatermelonSVG = () => (
   <svg
     version="1.1"
     id="Layer_1"

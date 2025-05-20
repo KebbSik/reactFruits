@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
-import { SVGProps } from "react";
-const BananaSVG = (props: SVGProps<SVGSVGElement>) => (
+const BananaSVG = () => (
   // <div style={{ position: "absolute", height: "100vh", width: 300 }}>
   <svg height={"100%"} viewBox="0 0 380 1000" fill="none">
     <motion.path

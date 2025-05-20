@@ -1,5 +1,4 @@
-import { SVGProps } from "react";
-const AppleSVG = (props: SVGProps<SVGSVGElement>) => (
+const AppleSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
