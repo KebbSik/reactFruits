@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  
-  base: '/reactfruits/',
   plugins: [svgr(), react()],
+  base: "/reactFruits",
 });
