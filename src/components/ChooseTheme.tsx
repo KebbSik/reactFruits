@@ -1,12 +1,19 @@
 // import { transform } from "motion";
+import { useState } from "react";
 import { fruitList, themeMap } from "../constants/FruitsMap";
 import { useTheme } from "../contexts/ThemeContext";
 import { motion } from "motion/react";
 import { HiChevronRight } from "react-icons/hi";
+import useMaxScreenSize from "../hooks/useMaxScreenSize";
 
 const ChooseTheme = () => {
   const { theme, changeFruit } = useTheme();
-  //  const [isActive, setIsActive] = useState(false);
+  const { max768 } = useMaxScreenSize();
+  const [isActive, setIsActive] = useState(false);
+  const changeVisibility = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <motion.div
       style={{
@@ -21,8 +28,10 @@ const ChooseTheme = () => {
         background: "#fff",
         borderRadius: " 0px 40px 40px 0px",
         padding: "16px 16px",
-        x: "-100%",
+        // x: "-100%",
+        x: max768 ? (isActive ? 0 : "-100%") : "-100%",
         y: "-50%",
+        transition: "transform 0.3s ease",
       }}
       whileHover={{ x: 0 }}
       transition={{ duration: 0.5 }}
@@ -60,8 +69,14 @@ const ChooseTheme = () => {
             alignItems: "center",
             display: "flex",
           }}
+          onClick={() => changeVisibility()}
         >
-          <HiChevronRight />
+          <HiChevronRight
+            style={{
+              transform: isActive ? "rotate(180deg)" : "rotate(0deg)",
+              transition: "transform 0.3s ease",
+            }}
+          />
         </div>
 
         {fruitList.map((fruit) => (

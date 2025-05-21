@@ -135,7 +135,10 @@ const Navbar = () => {
                   padding: "0.8rem",
                   cursor: "pointer",
                 }}
-                onClick={() => changeFruit(fruit)}
+                onClick={() => {
+                  changeFruit(fruit);
+                  setIsActive(false);
+                }}
                 key={fruit}
               >
                 {fruit.charAt(0).toUpperCase() + fruit.slice(1)}
