@@ -3,12 +3,13 @@ import { useTheme } from "../../contexts/ThemeContext";
 import useMaxScreenSize from "../../hooks/useMaxScreenSize";
 import paths from "./WorldPaths";
 import WordSVG from "./WorldSVG";
+import { path, ul } from "motion/react-client";
 interface Props {
   scrollRange?: [number, number];
 }
 
 const World = ({ scrollRange }: Props) => {
-  const { max1280, max768, max480 } = useMaxScreenSize();
+  const { max1280, max768, max992, max480 } = useMaxScreenSize();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
@@ -52,6 +53,7 @@ const World = ({ scrollRange }: Props) => {
       <motion.div
         style={{
           position: "absolute",
+          // top: 0,
           width: "100%",
           background: theme.color,
           height: "100vh",
@@ -162,13 +164,55 @@ const World = ({ scrollRange }: Props) => {
         <image x={935} y={25} href={theme.svgUrl} width={50}></image>
         <path
           id="description"
-          d="M -70 510 C 155 940 250 900  480 970"
+          // d="M 100 510 C 155 940 250 900  480 970"
+          d="M 750 800 C 1000 1050 1250 900  1400 850"
           fill="transparent"
         />
-        <text fontSize={70} letterSpacing={2} fill={theme.color}>
+        <text fontSize={65} letterSpacing={2} fill={theme.color}>
           <textPath href="#description">Annual disctribution</textPath>
         </text>
       </svg>
+      {max992 && (
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 16,
+            width: "100vw",
+            minHeight: "20vh",
+            background: theme.transparentColor,
+            bottom: 0,
+            display: "flex",
+            flexWrap: "wrap",
+            // justifyContent: "space-around",
+            alignItems: "center",
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
+            justifyContent: "space-around",
+            fontSize: max480 ? "0.9rem" : "",
+          }}
+        >
+          {paths[theme.name].map((path) => (
+            <div
+              style={{
+                padding: "0.3rem",
+                margin: "0.3rem",
+                border: `3px solid ${theme.color}`,
+                borderRadius: 10,
+                // textDecoration: "underline",
+                background: "#fff",
+                // flexShrink: 1,
+                // flexGrow: 1,
+                // textDecorationColor: theme.color,
+              }}
+            >
+              {/* {index + 1}. */}
+              {path.country} -{" "}
+              <span style={{ color: theme.color }}>{path.amout}</span> million
+              tons
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
