@@ -3,7 +3,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import useMaxScreenSize from "../../hooks/useMaxScreenSize";
 import paths from "./WorldPaths";
 import WordSVG from "./WorldSVG";
-import { path, ul } from "motion/react-client";
+
 interface Props {
   scrollRange?: [number, number];
 }
