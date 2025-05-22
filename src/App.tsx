@@ -22,7 +22,7 @@ function App() {
       duration: 0.5,
       easing: (t) => t,
       touchMultiplier: 1,
-      wheelMultiplier: 1,
+      wheelMultiplier: max992 ? 0.7 : 1,
     });
     function raf(time: number) {
       lenis.raf(time);
