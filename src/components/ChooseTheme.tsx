@@ -1,5 +1,5 @@
 // import { transform } from "motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fruitList, themeMap } from "../constants/FruitsMap";
 import { useTheme } from "../contexts/ThemeContext";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -20,6 +20,18 @@ const ChooseTheme = () => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsVisible(latest > 64);
   });
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup just in case
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isActive]);
 
   return (
     <motion.div
@@ -108,7 +120,13 @@ const ChooseTheme = () => {
             />
           </div>
           {fruitList.map((fruit) => (
-            <div key={fruit} onClick={() => changeFruit(fruit)}>
+            <div
+              key={fruit}
+              onClick={() => {
+                changeFruit(fruit);
+                setIsActive(!isActive);
+              }}
+            >
               <motion.div
                 style={{
                   padding: 5,
