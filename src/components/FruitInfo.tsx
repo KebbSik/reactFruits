@@ -132,6 +132,7 @@ const FruitInfo = ({ scrollRange }: Props) => {
         >
           {theme.info.facts.map((fact, index) => (
             <motion.div
+              key={index}
               style={{
                 x: infoX[index],
                 opacity: infoOpacity[index],

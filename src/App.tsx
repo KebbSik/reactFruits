@@ -9,11 +9,31 @@ import StartOver from "./components/StartOver";
 import ScrollSectionContainer from "./components/Tests/ScrollSectionContainer";
 import World from "./components/World/World";
 import useMaxScreenSize from "./hooks/useMaxScreenSize";
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
   // const scrollcontroller = {}; //percetage controler of scroll
   const { max992 } = useMaxScreenSize();
   const sectionHeight = max992 ? "500vh" : "750vh";
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 0.5,
+      easing: (t) => t,
+      touchMultiplier: 1,
+      wheelMultiplier: 1,
+    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div style={{ position: "relative" }}>
       <Navbar />

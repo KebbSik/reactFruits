@@ -192,8 +192,9 @@ const World = ({ scrollRange }: Props) => {
             fontSize: max480 ? "0.9rem" : "",
           }}
         >
-          {paths[theme.name].map((path) => (
+          {paths[theme.name].map((path, index) => (
             <div
+              key={index}
               style={{
                 padding: "0.3rem",
                 margin: "0.3rem",

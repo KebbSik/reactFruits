@@ -33,6 +33,12 @@ const ChooseTheme = () => {
     };
   }, [isActive]);
 
+  // useEffect(() => {
+  //   if (max768) {
+  //     setIsActive(false);
+  //   }
+  // }, [max768]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -57,6 +63,7 @@ const ChooseTheme = () => {
         }}
         onClick={() => setIsActive(!isActive)}
       ></div>
+
       <motion.div
         style={{
           position: "fixed",
@@ -97,7 +104,7 @@ const ChooseTheme = () => {
               zIndex: 0,
               top: "10%",
               left: "100%",
-              width: "2rem",
+              width: max768 ? "2rem" : "2.7rem",
               height: "4rem",
               transform: "translate(50%,-50%)",
               border: "5px solid rgb(137, 137, 137)",
