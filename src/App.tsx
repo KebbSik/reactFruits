@@ -15,14 +15,12 @@ function App() {
   return (
     <div style={{ position: "relative" }}>
       <Navbar />
-
+      <ChooseTheme />
       <ScrollSectionContainer height={sectionHeight}>
         <Hero scrollRange={[0, 0.2]} />
       </ScrollSectionContainer>
 
       <ScrollSectionContainer height={sectionHeight}>
-        {/* <FruitLine scrollRange={[0.2, 0.3]} />
-        <FruitInfo scrollRange={[0.3, 0.4]} /> */}
         <Info scrollRange={[0.2, 0.4]} />
       </ScrollSectionContainer>
 
@@ -35,7 +33,6 @@ function App() {
 
       <StartOver />
       <Blank />
-      <ChooseTheme />
     </div>
   );
 }

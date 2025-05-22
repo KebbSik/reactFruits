@@ -17,7 +17,7 @@ const Info = ({ scrollRange }: Props) => {
   const x = useTransform(
     scrollYProgress,
     [minRange + absoluteRange * 0.8, maxRange],
-    ["0", "-180%"]
+    ["0", "-185%"]
   );
 
   return (
@@ -59,7 +59,7 @@ const Info = ({ scrollRange }: Props) => {
               stroke-linecap="round"
               stroke-linejoin="round"
             />
-            <path d="M 2 -100 V 200" stroke="#000" strokeWidth={5}></path>
+            <path d="M 2 -1100 V 1200" stroke="#000" strokeWidth={5}></path>
             {/* <path d="M 0 197.5 H 1000" stroke="#000" strokeWidth={5}></path> */}
           </g>
           <path
