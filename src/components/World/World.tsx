@@ -72,6 +72,7 @@ const World = ({ scrollRange }: Props) => {
           opacity: titleOpacity,
           scale: titleScale,
           zIndex: 20,
+          padding: "10%",
         }}
       >
         <span style={{ textWrap: "wrap" }}>Map of distribution</span>
