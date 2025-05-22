@@ -92,7 +92,7 @@ const Description = ({ scrollRange }: Props) => {
           justifyContent: "center",
           // flexDirection: "column",
           gap: "1rem",
-          padding: "2.5rem",
+          padding: max480 ? "0.6rem" : "2.5rem",
           background: boxColor,
           // border: "5px solid black",
           borderRadius: 50,
@@ -164,7 +164,7 @@ const Description = ({ scrollRange }: Props) => {
             alignItems: "center",
           }}
         >
-          <motion.div style={{ position: "absolute", x }}>
+          <motion.div style={{ flexGrow: 1, position: "absolute", x }}>
             <Row
               title="Appearance"
               content={theme.info.descriptions.appearance}
