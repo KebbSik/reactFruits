@@ -6,8 +6,8 @@ const useMaxScreenSize = () => {
   const max992 = useMediaQuery({ query: "(max-width: 992px)" });
   const max768 = useMediaQuery({ query: "(max-width: 768px)" });
   const max480 = useMediaQuery({ query: "(max-width: 480px)" });
-
-  return { max480, max768, max992, max1280, max1400 };
+  const max360 = useMediaQuery({ query: "(max-width: 360px )" });
+  return { max360, max480, max768, max992, max1280, max1400 };
 };
 
 export default useMaxScreenSize;

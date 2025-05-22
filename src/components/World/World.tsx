@@ -9,7 +9,7 @@ interface Props {
 }
 
 const World = ({ scrollRange }: Props) => {
-  const { max1280, max768, max992, max480 } = useMaxScreenSize();
+  const { max1280, max768, max992, max480, max360 } = useMaxScreenSize();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll();
   const minRange = scrollRange ? scrollRange[0] : 0;
@@ -189,8 +189,8 @@ const World = ({ scrollRange }: Props) => {
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
             justifyContent: "space-around",
-            fontSize: max480 ? "0.9rem" : "",
-            maxHeight: "25%",
+            fontSize: max480 ? (max360 ? "0.6rem" : "0.8rem") : "",
+            maxHeight: max480 ? "30%" : "40%",
             flexDirection: "column",
           }}
         >
