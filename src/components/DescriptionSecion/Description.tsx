@@ -102,11 +102,20 @@ const Description = ({ scrollRange }: Props) => {
           style={{
             height: "100%",
             display: "flex",
-            flex: 1,
-            position: "relative",
+            flex: max768 ? 0 : 1,
+            width: "100%",
+            position: max768 ? "absolute" : "relative",
+            transform: max768 ? "translateY(-300px) scale(0.3)" : "none",
           }}
         >
           <motion.svg
+            // initial={{ y: -160 }}
+            style={{
+              // position: max768 ? "absolute" : "static",
+              // transform: max768 ? "translateY(-100px)" : "none",
+              position: "absolute",
+              top: 0,
+            }}
             width={"100%"}
             height={"100%"}
             viewBox="-100 -100 200 200"
