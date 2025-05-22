@@ -8,10 +8,12 @@ import Info from "./components/Info";
 import StartOver from "./components/StartOver";
 import ScrollSectionContainer from "./components/Tests/ScrollSectionContainer";
 import World from "./components/World/World";
+import useMaxScreenSize from "./hooks/useMaxScreenSize";
 
 function App() {
   // const scrollcontroller = {}; //percetage controler of scroll
-  const sectionHeight = "750vh";
+  const { max992 } = useMaxScreenSize();
+  const sectionHeight = max992 ? "500vh" : "750vh";
   return (
     <div style={{ position: "relative" }}>
       <Navbar />
