@@ -190,6 +190,8 @@ const World = ({ scrollRange }: Props) => {
             borderTopRightRadius: 10,
             justifyContent: "space-around",
             fontSize: max480 ? "0.9rem" : "",
+            maxHeight: "25%",
+            flexDirection: "column",
           }}
         >
           {paths[theme.name].map((path, index) => (
