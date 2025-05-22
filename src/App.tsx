@@ -11,7 +11,7 @@ import World from "./components/World/World";
 
 function App() {
   // const scrollcontroller = {}; //percetage controler of scroll
-  const sectionHeight = "800vh";
+  const sectionHeight = "1000vh";
   return (
     <div style={{ position: "relative" }}>
       <Navbar />
@@ -21,11 +21,11 @@ function App() {
       </ScrollSectionContainer>
 
       <ScrollSectionContainer height={sectionHeight}>
-        <Info scrollRange={[0.2, 0.4]} />
+        <Info scrollRange={[0.2, 0.48]} />
       </ScrollSectionContainer>
 
       <ScrollSectionContainer height={sectionHeight}>
-        <Description scrollRange={[0.4, 0.6]} />
+        <Description scrollRange={[0.4, 0.7]} />
       </ScrollSectionContainer>
       <ScrollSectionContainer height={sectionHeight}>
         <World scrollRange={[0.6, 0.8]} />

@@ -124,7 +124,9 @@ const ChooseTheme = () => {
               key={fruit}
               onClick={() => {
                 changeFruit(fruit);
-                setIsActive(!isActive);
+                if (max768) {
+                  setIsActive(!isActive);
+                }
               }}
             >
               <motion.div

@@ -42,7 +42,8 @@ const Description = ({ scrollRange }: Props) => {
   );
   const plateRotation = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.5, minRange + absoluteRange * 0.9],
+    // [minRange + absoluteRange * 0.35, minRange + absoluteRange * 0.9],
+    [minRange + absoluteRange * 0.35, maxRange],
     [0, 720]
   );
   const bgColor = useTransform(

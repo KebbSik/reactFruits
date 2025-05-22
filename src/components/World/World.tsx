@@ -18,33 +18,33 @@ const World = ({ scrollRange }: Props) => {
 
   const titleOpacity = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.75, minRange + absoluteRange * 0.8],
+    [minRange + absoluteRange * 0.75, minRange + absoluteRange],
     [1, 0]
   );
 
   const titleScale = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.75, minRange + absoluteRange * 0.8],
+    [minRange + absoluteRange * 0.75, minRange + absoluteRange],
     [1, 6]
   );
   const pathLength = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 0.8, minRange + absoluteRange * 1],
+    [minRange + absoluteRange * 1.05, minRange + absoluteRange * 1.25],
     [0, 1]
   );
   const descriptionPathLength = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 1, minRange + absoluteRange * 1.3],
+    [minRange + absoluteRange * 1.25, minRange + absoluteRange * 1.45],
     [0, 1]
   );
   const descriptionOpacity = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 1.3, minRange + absoluteRange * 1.6],
+    [minRange + absoluteRange * 1.45, minRange + absoluteRange * 1.75],
     [0, 1]
   );
   const descriptionX = useTransform(
     scrollYProgress,
-    [minRange + absoluteRange * 1.3, minRange + absoluteRange * 1.6],
+    [minRange + absoluteRange * 1.45, minRange + absoluteRange * 1.75],
     [-20, 0]
   );
 
@@ -71,9 +71,10 @@ const World = ({ scrollRange }: Props) => {
           color: theme.textColor,
           opacity: titleOpacity,
           scale: titleScale,
+          zIndex: 20,
         }}
       >
-        <p>Map of distribution</p>
+        <span style={{ textWrap: "wrap" }}>Map of distribution</span>
       </motion.div>
       <svg
         width="100%"

@@ -130,8 +130,8 @@ const Info = ({ scrollRange }: Props) => {
         </motion.g>
       </motion.svg>
 
-      <FruitLine scrollRange={[0.2, 0.28]} />
-      <FruitInfo scrollRange={[0.28, 0.36]} />
+      <FruitLine scrollRange={[0.2, 0.29]} />
+      <FruitInfo scrollRange={[0.3, 0.4]} />
     </motion.div>
   );
 };
