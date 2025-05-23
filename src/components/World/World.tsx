@@ -190,9 +190,15 @@ const World = ({ scrollRange }: Props) => {
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
             justifyContent: "space-around",
-            fontSize: max480 ? (max360 ? "0.4rem" : "0.8rem") : "",
-            // maxHeight: max480 ? "30%" : "40%",
-            maxHeight: "40%",
+            fontSize: max768
+              ? max480
+                ? max360
+                  ? "0.4rem"
+                  : "0.6rem"
+                : "8.rem"
+              : "",
+            maxHeight: max480 ? "30%" : "40%",
+            // maxHeight: "40%",
             flexDirection: "column",
           }}
         >
