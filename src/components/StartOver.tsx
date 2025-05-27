@@ -205,7 +205,7 @@ const StartOver = () => {
             strokeWidth="3"
           />
           <path
-            d="M-650 280 L550 650 V250 L 825 325 V 730 L 1650 990 V -1200 H -550"
+            d="M-1050 180 L550 650 V250 L 825 325 V 730 L 2550 1300 V -1200 H -550"
             stroke="black"
             fill={theme.color}
             strokeWidth={"0.5rem"}
