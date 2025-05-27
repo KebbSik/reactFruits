@@ -12,22 +12,15 @@ const ChooseTheme = () => {
   const { max768 } = useMaxScreenSize();
   const [isActive, setIsActive] = useState(false);
   const changeVisibility = () => {
-    if (max768) {
-      setIsActive(!isActive);
-    }
+    setIsActive(!isActive);
   };
   const [isVisible, setIsVisible] = useState(false);
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsVisible(latest > 64);
   });
   useEffect(() => {
-    if (isActive) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isActive ? "hidden" : "auto";
 
-    // Cleanup just in case
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -76,12 +69,12 @@ const ChooseTheme = () => {
           background: "#fff",
           borderRadius: " 0px 40px 40px 0px",
           padding: "16px 16px",
-          // x: "-100%",
-          x: max768 ? (isActive ? 0 : "-100%") : "-100%",
+          // x: max768 ? (isActive ? 0 : "-100%") : "-100%",
+          x: isActive ? 0 : "-100%",
           y: "-50%",
           transition: "transform 0.3s linear",
         }}
-        whileHover={{ x: 0 }}
+        // whileHover={{ x: 0 }}
         // transition={{ duration: 0.5, ease: "linear" }}
       >
         <div
@@ -131,9 +124,8 @@ const ChooseTheme = () => {
               key={fruit}
               onClick={() => {
                 changeFruit(fruit);
-                if (max768) {
-                  setIsActive(!isActive);
-                }
+
+                setIsActive(!isActive);
               }}
             >
               <motion.div
