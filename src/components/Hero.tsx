@@ -1,6 +1,7 @@
 import { easeInOut } from "motion";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
+import useMaxScreenSize from "../hooks/useMaxScreenSize";
 // import OnScrollLine from "./OnScrollLine";
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const Hero = ({ scrollRange }: Props) => {
   const { theme, currentFruit } = useTheme();
-
+  const { max768 } = useMaxScreenSize();
   const minRange = scrollRange ? scrollRange[0] : 0;
   const maxRange = scrollRange ? scrollRange[1] : 0;
   const absoluteRange = scrollRange ? scrollRange[1] - scrollRange[0] : 0;
@@ -124,7 +125,7 @@ const Hero = ({ scrollRange }: Props) => {
           alt={currentFruit}
           key={theme.svgUrl}
           style={{
-            width: "min(50%,350px)",
+            width: max768 ? "min(40%,350px)" : "min(20%,350px)",
             zIndex: -1,
             scale: svgImgScale,
             rotate: imageRotate,

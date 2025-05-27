@@ -17,10 +17,10 @@ const Row = ({ isReversed, content, title }: Props) => {
       style={{
         display: "flex",
         gap: "2rem",
-        minHeight: "23rem",
+        minHeight: "18rem",
         flexDirection: isReversed ? "row-reverse" : "row",
         border: "3px solid black",
-        padding: max1280 ? (max480 ? "0.4rem" : "1rem") : "2rem",
+        padding: max1280 ? (max480 ? "0.4rem" : "0.7rem") : "2rem",
         background: "white",
         borderRadius: 50,
       }}
@@ -32,7 +32,7 @@ const Row = ({ isReversed, content, title }: Props) => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          minHeight: "23.5rem",
+          // minHeight: "23.5rem",
         }}
       >
         <p

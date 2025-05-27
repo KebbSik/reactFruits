@@ -17,7 +17,7 @@ const Info = ({ scrollRange }: Props) => {
   const x = useTransform(
     scrollYProgress,
     [minRange + absoluteRange * 0.8, maxRange],
-    ["0", "-200%"]
+    ["0", "-290%"]
   );
 
   return (

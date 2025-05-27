@@ -39,7 +39,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.8, transition: { duration: 0.1 } }}
               transition={{ duration: 0.1, ease: easeInOut }}
               style={{
-                zIndex: 2,
+                zIndex: 999,
                 fontSize: max992 ? "1rem" : "1.3rem",
                 padding: max768 ? "0.5rem" : "0.35rem",
                 cursor: "pointer",
@@ -63,7 +63,7 @@ const Navbar = () => {
           id="start"
           style={{
             position: "relative",
-            zIndex: 2,
+            zIndex: 999,
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-around",

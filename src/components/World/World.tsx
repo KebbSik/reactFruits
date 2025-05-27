@@ -79,11 +79,13 @@ const World = ({ scrollRange }: Props) => {
       </motion.div>
       <svg
         width="100%"
-        height="100vh"
+        height="90vh"
         viewBox="0 0 1920 1032"
-        style={{
-          border: "1px solid black",
-        }}
+        style={
+          {
+            // border: "1px solid black",
+          }
+        }
       >
         <WordSVG />
         {paths[theme.name].map((path, index) => (
@@ -166,8 +168,8 @@ const World = ({ scrollRange }: Props) => {
         <image x={935} y={25} href={theme.svgUrl} width={50}></image>
         <path
           id="description"
-          // d="M 100 510 C 155 940 250 900  480 970"
-          d="M 750 800 C 1000 1050 1250 900  1400 850"
+          d="M 20 240 C 55 740 250 700  480 750"
+          // d="M 750 800 C 1000 1050 1250 900  1400 850"
           fill="transparent"
         />
         <text fontSize={65} letterSpacing={2} fill={theme.color}>
@@ -181,7 +183,7 @@ const World = ({ scrollRange }: Props) => {
             zIndex: 16,
             width: "100vw",
             minHeight: "20vh",
-            background: theme.transparentColor,
+            // background: theme.transparentColor,
             bottom: 0,
             display: "flex",
             flexWrap: "wrap",
@@ -189,13 +191,15 @@ const World = ({ scrollRange }: Props) => {
             alignItems: "center",
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
-            justifyContent: "space-around",
-            fontSize: max768
-              ? max480
-                ? max360
-                  ? "0.4rem"
-                  : "0.6rem"
-                : "8.rem"
+            justifyContent: "space-between",
+            fontSize: max992
+              ? max768
+                ? max480
+                  ? max360
+                    ? "0.4rem"
+                    : "0.6rem"
+                  : "0.8rem"
+                : "1rem"
               : "",
             maxHeight: max480 ? "30%" : "40%",
             // maxHeight: "40%",

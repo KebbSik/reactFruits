@@ -67,6 +67,7 @@ const Description = ({ scrollRange }: Props) => {
         alignItems: "center",
         flexWrap: "wrap",
         height: "100%",
+        minHeight: "30rem",
         width: "100%",
         backgroundColor: bgColor,
       }}

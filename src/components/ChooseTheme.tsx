@@ -68,7 +68,7 @@ const ChooseTheme = () => {
         style={{
           position: "fixed",
           // left: 0,
-          top: "40%",
+          top: "50%",
           // transform: "translate(0%,-50%)",
           zIndex: 10,
           border: "5px solid rgb(137, 137, 137)",
